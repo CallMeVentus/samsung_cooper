@@ -33,19 +33,9 @@ PRODUCT_DEVICE := cooper
 PRODUCT_MODEL := GT-S5830
 
 PRODUCT_PACKAGES += \
-    LiveWallpapers \
-    LiveWallpapersPicker \
-    VisualizationWallpapers \
-    MagicSmokeWallpapers \
-    VisualizationWallpapers \
     librs_jni \
-    Gallery3d \
-    SpareParts \
-    Development \
-    Term \
     libOmxCore \
     libOmxVidEnc \
-    FM \
     Torch \
     make_ext4fs \
     brcm_patchram_plus \
@@ -82,13 +72,11 @@ PRODUCT_COPY_FILES += \
 
 # WLAN + BT
 PRODUCT_COPY_FILES += \
-	device/samsung/cooper/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
+    device/samsung/cooper/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
     device/samsung/cooper/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf \
     device/samsung/cooper/prebuilt/hostapd:system/bin/hostapd \
     device/samsung/cooper/prebuilt/hostapd.conf:system/etc/wifi/hostapd.conf
     
-
-
 # Install the features available on this device.
 PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
@@ -97,7 +85,7 @@ PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
     frameworks/base/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
     frameworks/base/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
-    frameworks/base/data/etc/android.hardware.touchscreen.multitouch.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.xml
+    frameworks/base/data/etc/android.hardware.touchscreen.multitouch.distinct.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.distinct.xml
 
 #Kernel Modules
 PRODUCT_COPY_FILES += \
@@ -124,7 +112,11 @@ PRODUCT_COPY_FILES += \
     device/samsung/cooper/firmware/bdata.SD31.bin.04:system/wifi/ath6k/AR6003/hw2.0/bdata.SD31.bin.04 \
     device/samsung/cooper/firmware/data.patch.bin:system/wifi/ath6k/AR6003/hw2.0/data.patch.bin \
     device/samsung/cooper/firmware/otp.bin.z77:system/wifi/ath6k/AR6003/hw2.0/otp.bin.z77
-    
+
+# BT firmware
+PRODUCT_COPY_FILES += \
+    device/samsung/cooper/firmware/BCM2049C0_003.001.031.0088.0094.hcd:system/etc/firmware/BCM2049C0_003.001.031.0088.0094.hcd
+
 #GPU firmware
 PRODUCT_COPY_FILES += \
     device/samsung/cooper/firmware/yamato_pm4.fw:system/etc/firmware/yamato_pm4.fw \
@@ -165,7 +157,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.media.dec.jpeg.memcap=20000000 \
     dalvik.vm.lockprof.threshold=500 \
     dalvik.vm.dexopt-flags=m=y \
-    dalvik.vm.heapsize=32m \
+    dalvik.vm.heapsize=48m \
     dalvik.vm.execution-mode=int:jit \
     dalvik.vm.dexopt-data-only=1 \
     ro.opengles.version=131072  \
