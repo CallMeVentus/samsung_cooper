@@ -53,6 +53,7 @@ PRODUCT_PACKAGES += \
     copybit.cooper \
     lights.cooper \
     gralloc.cooper \
+    gps.cooper \
     setup_fs \
     dexpreopt
 
