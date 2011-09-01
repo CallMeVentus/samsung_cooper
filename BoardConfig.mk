@@ -22,7 +22,8 @@ LOCAL_PATH:= $(call my-dir)
 # WARNING: This line must come *before* including the proprietary
 # variant, so that it gets overwritten by the parent (which goes
 # against the traditional rules of inheritance).
-USE_CAMERA_STUB := false
+# for now
+USE_CAMERA_STUB := true
 
 TARGET_NO_BOOTLOADER := true
 
@@ -43,9 +44,9 @@ TARGET_OTA_ASSERT_DEVICE := cooper,GT-S5830
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
 
-BOARD_HAVE_FM_RADIO := true
-BOARD_GLOBAL_CFLAGS += -DHAVE_FM_RADIO
-BOARD_FM_DEVICE := si4708
+#BOARD_HAVE_FM_RADIO := true
+#BOARD_GLOBAL_CFLAGS += -DHAVE_FM_RADIO
+#BOARD_FM_DEVICE := si4708
 
 # Wifi related defines
 BOARD_WPA_SUPPLICANT_DRIVER := AWEXT
