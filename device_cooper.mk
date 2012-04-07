@@ -36,14 +36,13 @@ PRODUCT_PACKAGES += \
     librs_jni \
     libOmxCore \
     libOmxVidEnc \
-    Torch \
     make_ext4fs \
     brcm_patchram_plus \
     sec_touchscreen.kcm \
-    copybit.cooper \
+    copybit.msm7k \
+    gralloc.msm7k \
+    gps.msm7k \
     lights.cooper \
-    gralloc.cooper \
-    gps.cooper \
     setup_fs \
     dexpreopt
 
